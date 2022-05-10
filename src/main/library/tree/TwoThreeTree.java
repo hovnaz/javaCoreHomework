@@ -1,4 +1,4 @@
-//package main.library;
+//package main.library.tree;
 //
 ///**
 // * 2-3 Tree node implementation
@@ -92,7 +92,4 @@
 //            }
 //        }
 //    }
-//
-//
-//
 //}
