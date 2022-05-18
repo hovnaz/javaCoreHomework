@@ -15,7 +15,7 @@ public class ArrayUtil {
         System.out.println("evenCount "+list.evenCount());
         System.out.println("oddCount "+ list.oddCount());
         System.out.println(list.sum());
-        System.out.println(list.arithmeticMean());
+        System.out.println(list.avg());
         list.print();
     }
 
@@ -38,7 +38,7 @@ public class ArrayUtil {
         }
         return res;
     }
-    public int arithmeticMean(){
+    public int avg(){
         return (int)(sum() / data.length);
     }
     public int max(){
