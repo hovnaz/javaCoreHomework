@@ -11,7 +11,7 @@ public class CharArrayExample {
         System.out.println("middle "+ Arrays.toString(middle()));
         chars = new char[]{'j', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
         System.out.println("endsWith "+endsWith("ly"));
-        chars = new char[]{'b','a','b','o','l','a'};
+        chars = new char[]{'b','a','b','o','b','a'};
         System.out.println("startWith "+startWith());
         chars = new char[]{' ',' ','b','a','r','e','v',' ',' '};
         System.out.print("countOf ");
@@ -46,7 +46,7 @@ public class CharArrayExample {
     }
     public static boolean startWith(){
         for (int i = 0; i < chars.length; i++) {
-            if (chars.length > chars.length+2 && chars[i] == 'b' && chars[i + 2] == 'b') return true;
+            if (chars.length > i+2 && chars[i] == 'b' && chars[i + 2] == 'b') return true;
         }
         return false;
     }
