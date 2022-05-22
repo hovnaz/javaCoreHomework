@@ -15,9 +15,9 @@ public class ArraySpaceExample {
         int startIndex = -1;
         int endIndex = spaceArray.length - 1;
 
-        for (int i = 0; i < spaceArray.length; i++) { // start index
+        for (char c : spaceArray) { // start index
             startIndex++;
-            if (spaceArray[i] != ' ') break;
+            if (c != ' ') break;
         }
 
         for (int i = spaceArray.length-1; i > 0; i--, endIndex--) { // end index
