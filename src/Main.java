@@ -1,4 +1,4 @@
-import homework.arrayutil.ArrayUtil;
+import homework.arrayUtil.ArrayUtil;
 
 import java.util.Arrays;
 

@@ -4,29 +4,23 @@ import java.util.Arrays;
 
 public class ArraySpaceExample {
 
-    static char[] spaceArray = {' ',' ','c', 'a', 't', ' ', 'b', 'i',' '};
-
-    public static void main(String[] args) {
-        System.out.println("trim: " + Arrays.toString(trim()));
-    }
-
-    public static char[] trim() {
+    public static char[] trim(char[] array) {
 
         int startIndex = -1;
-        int endIndex = spaceArray.length - 1;
+        int endIndex = array.length - 1;
 
-        for (char c : spaceArray) { // start index
+        for (char c : array) { // start index
             startIndex++;
             if (c != ' ') break;
         }
 
-        for (int i = spaceArray.length-1; i > 0; i--, endIndex--) { // end index
-            if (spaceArray[i] != ' ') break;
+        for (int i = array.length-1; i > 0; i--, endIndex--) { // end index
+            if (array[i] != ' ') break;
         }
         char[] res = new char[endIndex-startIndex];
         int size = 0;
         for (int i = startIndex; i < endIndex; i++,size++) {
-            res[size] = spaceArray[i];
+            res[size] = array[i];
         }
         return res;
     }

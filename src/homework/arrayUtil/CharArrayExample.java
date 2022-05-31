@@ -1,58 +1,46 @@
 package homework.arrayUtil;
 
-import java.util.Arrays;
-
 public class CharArrayExample {
-    static char[] chars = {'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
-    public static void main(String[] args) {
-        chars = new char[]{'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
-        System.out.println("countOf "+countOf('o'));
-        chars = new char[]{'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
-        System.out.println("middle "+ Arrays.toString(middle()));
-        chars = new char[]{'j', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
-        System.out.println("endsWith "+endsWith("ly"));
-        chars = new char[]{'b','a','b','o','b','a'};
-        System.out.println("startWith "+startWith());
-        chars = new char[]{' ',' ','b','a','r','e','v',' ',' '};
-        System.out.print("countOf ");
-        trim();
+    char[] array;
+    CharArrayExample(char[] array){
+        this.array = array;
     }
-    public static int countOf(char value){
+    public int countOf(char value){
         int count = 0;
 
-        for (int i = 0; i < chars.length; i++) {
-            if (value == chars[i]) count++;
+        for (char c : array) {
+            if (value == c) count++;
         }
         return count;
     }
-    public static char[] middle(){
+    public char[] middle(){
         char[] res = new char[2];
-        if(chars.length>1) {
-            res[1]=chars[chars.length/2];
-            res[0]=chars[chars.length/2-1];
+        if(array.length>1) {
+            res[1]=array[array.length/2];
+            res[0]=array[array.length/2-1];
             return res;
         } else {
-            res[1]=chars[((chars.length+1)/2) -1];
+            res[1]=array[((array.length+1)/2) -1];
         }
         return res;
     }
-    public static boolean endsWith(String value){
+    public boolean endsWith(String value){
         char[] valueCharArr = value.toCharArray();
         int index = valueCharArr.length;
-        for (int i = chars.length-1; i > 0 & 0 < index--; i--) {
-            if (chars[i] != valueCharArr[index]) return false;
+        for (int i = array.length-1; i > 0 & 0 < index--; i--) {
+            if (array[i] != valueCharArr[index]) return false;
         }
         return true;
     }
-    public static boolean startWith(){
-        for (int i = 0; i < chars.length; i++) {
-            if (chars.length > i+2 && chars[i] == 'b' && chars[i + 2] == 'b') return true;
+    public boolean startWith(){
+        for (int i = 0; i < array.length; i++) {
+            if (array.length > i+2 && array[i] == 'b' && array[i + 2] == 'b') return true;
         }
         return false;
     }
-    public static void trim(){
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] != ' ') System.out.print(chars[i]);
+    public void trim(){
+        for (char aChar : array) {
+            if (aChar != ' ') System.out.print(aChar);
         }
     }
 
