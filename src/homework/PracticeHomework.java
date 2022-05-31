@@ -21,7 +21,7 @@ public class PracticeHomework {
     }
 
     //վերադարձնել true եթե տրված a և b թվերը իրար հավասար են, եթե ոչ՝ false
-    boolean isSameNum(int a, int b) {
+    boolean isSameNum(int a,int b) {
         return a == b;
     }
 
