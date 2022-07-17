@@ -2,8 +2,13 @@ package homework.arrayUtil;
 
 public class ArrayUtilDemo {
     public static void main(String[] args) {
-        int[] array = {1,2,4,7,8,9,1,4,6,-7,8,1,2,4,8};
-        ArrayUtil util = new ArrayUtil(array);
-        System.out.println("max = " + util.min());
+        DynamicArray array = new DynamicArray();
+        array.add(1);
+        array.add(2);
+        array.add(5);
+        array.add(7);
+        array.print();
+        array.delate(2);
+        array.print();
     }
 }

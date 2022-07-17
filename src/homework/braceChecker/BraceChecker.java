@@ -3,7 +3,6 @@ package homework.braceChecker;
 import homework.arrayUtil.Stack;
 
 
-
 public class BraceChecker {
     private String text;
 
