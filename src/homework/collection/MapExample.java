@@ -6,11 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 public class MapExample {
-    List<FootballTeamMember> listOfPlayer = new ArrayList<>();
+    static List<FootballTeamMember> listOfPlayer = new ArrayList<>();
     public static void main(String[] args) {
         FootballTeamMember player1 = new FootballTeamMember(10,"Henrik Mxitaryan");
         FootballTeamMember player2 = new FootballTeamMember(11,"Henrik Mxitaryan");
         FootballTeamMember player3 = new FootballTeamMember(7,"Henrik Mxitaryan");
+        listOfPlayer.add(player1);
+        listOfPlayer.add(player2);
+        listOfPlayer.add(player3);
+        Map<Integer, String> playerMap = createFootballTeam(listOfPlayer);
+        removeFromMap(playerMap, 10);
     }
 
     //Ունենք FootballTeamMember-ի լիստ, պետք է ստանանք HashMap որտեղ կեյ-ը կլինի խաղացողի համարը, իսկ վելյուն իրա անունը։
@@ -24,8 +29,7 @@ public class MapExample {
 
     //Մեթոդի մեջ պետք է տրված մապ-ից ջնջենք removedNumber համարը եթե կա, ու վերադարձնենք true, եթե չկա վերադարձնենք false
     static boolean removeFromMap(Map<Integer, String> memberMap, Integer removedNumber) {
-        memberMap.remove(removedNumber);
-        return true;
+        return  memberMap.remove(removedNumber) != null;
     }
 
     //Մեթոդով տպելու ենք միայն անունները
@@ -66,6 +70,14 @@ public class MapExample {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "FootballTeamMember{" +
+                    "number=" + number +
+                    ", name='" + name + '\'' +
+                    '}';
         }
     }
 }
