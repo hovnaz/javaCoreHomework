@@ -1,34 +1,45 @@
 package homework.collection;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MapExample {
-
+    List<FootballTeamMember> listOfPlayer = new ArrayList<>();
     public static void main(String[] args) {
-
+        FootballTeamMember player1 = new FootballTeamMember(10,"Henrik Mxitaryan");
+        FootballTeamMember player2 = new FootballTeamMember(11,"Henrik Mxitaryan");
+        FootballTeamMember player3 = new FootballTeamMember(7,"Henrik Mxitaryan");
     }
 
     //Ունենք FootballTeamMember-ի լիստ, պետք է ստանանք HashMap որտեղ կեյ-ը կլինի խաղացողի համարը, իսկ վելյուն իրա անունը։
     static Map<Integer, String> createFootballTeam(List<FootballTeamMember> members) {
-        return null;
+        HashMap<Integer, String> map = new HashMap<>();
+        for (FootballTeamMember member : members) {
+            map.put(member.getNumber(), member.getName());
+        }
+        return map;
     }
 
     //Մեթոդի մեջ պետք է տրված մապ-ից ջնջենք removedNumber համարը եթե կա, ու վերադարձնենք true, եթե չկա վերադարձնենք false
     static boolean removeFromMap(Map<Integer, String> memberMap, Integer removedNumber) {
-        return false;
+        memberMap.remove(removedNumber);
+        return true;
     }
 
     //Մեթոդով տպելու ենք միայն անունները
     static void printAllMemberNames(Map<Integer, String> memberMap) {
-
+        System.out.println(memberMap.values());
     }
 
     //Մեթոդով տպելու ենք թե համարը, թե խաղացողի անունը հետյալ ձև՝
     // 11 - Poxos Poxosyan
     // 12 - Petros Petrosyan
     static void printAllMembers(Map<Integer, String> memberMap) {
-
+        for (Map.Entry<Integer, String> entry : memberMap.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
     }
 
 
