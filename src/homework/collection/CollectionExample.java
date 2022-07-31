@@ -5,7 +5,16 @@ import java.util.*;
 public class CollectionExample {
 
     public static void main(String[] args) {
-
+        List<String> list = new ArrayList<>();
+        list.add("barev");
+        list.add("hojox");
+        list.add("inch ka chka");
+        list.add("inch ka chka");
+        list.add("inch ka chka");
+        list.add("inch ka chka");
+        list.add("inch ka chka");
+        printFirstFive(list);
+//        System.out.println(strings);
     }
 
     //մեթոդը գրել այնպես, որ կանչենք, ու իրան ստրինգների մասիվ տանք, ինքը վերադարձնի նույն էլեմենտներով ArrayList
@@ -39,7 +48,7 @@ public class CollectionExample {
     static void printFirstFive(List<String> list) {
         int len = Math.min(list.size(), 5);
         for (int i = 0; i < len; i++) {
-            System.out.print(list.get(i) + " ");
+            System.out.print(list.get(i) + ", ");
         }
     }
 
